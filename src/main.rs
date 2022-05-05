@@ -5,6 +5,8 @@ use rand::Rng;
 
 use std::cmp::Ordering;
 
+
+
 fn main() {
 
 
@@ -36,7 +38,10 @@ fn main() {
         
         //Because we will be making a comparison with a random number, which is an Integer
         //Lets parse the user input to an integer
-        let guess : u32 = guess.trim().parse().expect("Unable to parse number");
+        let guess : u32 = match guess.trim().parse() {
+            Ok(num) => num,
+            Err(_) => continue,
+        };
         
         match guess.cmp(&secret_number) {
             Ordering::Less => println!("Too Small!"),
