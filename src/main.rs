@@ -9,6 +9,11 @@ use std::cmp::Ordering;
 
 fn main() {
 
+    //Lets define an array
+    let count_down_seq = 1..4;
+    for elem in count_down_seq.rev(){
+        println!("Countdown -> {}", elem);
+    }
 
     println!("\n\t\tGuess the number\n");
 
